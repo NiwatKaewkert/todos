@@ -11,14 +11,15 @@
       <div ng-controller="AddToDos">
         <form class="form-inline">
           <div class="form-group">
-            <input type="text" id="todo" class="form-control" name="todo" ng-model = "todo" placeholder="What needs to be done?">
+            <input type="text" id="todo" class="form-control" name="todo" ng-model = "todo" placeholder="What needs to be done?" > 
           </div>
-          <button ng-click = "save()" type="button" class="btn btn-primary" width = "300">Add</button>
+          <button ng-click = "save()" type="button" class="btn btn-primary" >Add</button>
         </form>
       </div>
 
 
-      <div ng-controller = 'ListToDos'>
+      <div ng-controller = 'ListToDos' class="table-responsive" >
+      <div class="table table-bordered">
           <table class="table table-hover">
             <thead>
               <tr>
@@ -27,9 +28,9 @@
                 <th>Status</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody class="table table-hover">
               <tr ng-repeat = 'contact in contacts' ng-controller = 'Checkbox'>
-                <td>
+                <td > 
                     <input style="hide:true;" type="checkbox" ng-model="selectCheck.check" ng-true-value="'Completed'" ng-false-value="'Incomplete'" class="ng-dirty ng-touched ng-empty ng-invalid ng-invalid-parse">
                 </td>
                 <td>{{ contact.todo}}</td>
@@ -37,8 +38,9 @@
             </tr>
           </tbody>
         </table>
+        </div>
       </div>
-
+      <button type="button" class="btn btn-danger btn-xs">Clear All</button>
       
     </div>
 
