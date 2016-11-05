@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app= 'ContactApp'>
+  <head>
+    <meta charset="utf-8">
+    <title>Todos </title>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+      <div ng-controller="AddContactController">
+        <form class="form-inline">
+          <div class="form-group">
+            <input type="text" id="todo" class="form-control" name="todo" ng-model = "todo" placeholder="What needs to be done?">
+          </div>
+          <button ng-click = "save()" type="button" class="btn btn-primary" width = "300">Add</button>
+        </form>
+      </div>
+
+
+      <div ng-controller = 'ListContactController'>
+          <table class="table table-hover" width = "300" higth = "300">
+            <thead>
+              <tr>
+                <th>Check</th>
+                <th>List</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat = 'contact in contacts'>
+                <td>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" id="blankCheckbox" value="option1" >
+                      </label>
+                    </div>
+                </td>
+                <td>{{ contact.todo}}</td>
+                <td>{{ contact.phone}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/angular/angular.js" charset="utf-8"></script>
+    <script src="app.js" charset="utf-8"></script>
+  </body>
+</html>
