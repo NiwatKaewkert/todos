@@ -25,14 +25,22 @@ angular.module ('TodoApp',[])
 })
 
 .controller('AddToDos',function($scope,Service){
-  $scope.save = function() {
-    var contact = {
-      todo: $scope.todo,
-      check: ''
-    }
+  $scope.save = function() 
+  {
+      if ($scope.todo != '') 
+      {
+        var contact = 
+        {
+          todo: $scope.todo,
+          check: ''
 
-    Service.add(contact)
-    resetForm();
+        }
+        Service.add(contact)
+      }
+      else
+      resetForm()
+
+    resetForm()
   }
 
   function resetForm() {
