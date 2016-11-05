@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app= 'ContactApp'>
+<html ng-app= 'TodoApp'>
   <head>
     <meta charset="utf-8">
     <title>Todos </title>
@@ -8,7 +8,7 @@
 
   <body>
     <div class="container">
-      <div ng-controller="AddContactController">
+      <div ng-controller="AddToDos">
         <form class="form-inline">
           <div class="form-group">
             <input type="text" id="todo" class="form-control" name="todo" ng-model = "todo" placeholder="What needs to be done?">
@@ -18,8 +18,8 @@
       </div>
 
 
-      <div ng-controller = 'ListContactController'>
-          <table class="table table-hover" width = "300" higth = "300">
+      <div ng-controller = 'ListToDos'>
+          <table class="table table-hover">
             <thead>
               <tr>
                 <th>Check</th>
@@ -28,12 +28,12 @@
               </tr>
             </thead>
             <tbody>
-              <tr ng-repeat = 'contact in contacts'>
+              <tr ng-repeat = 'contact in contacts' ng-controller = 'Checkbox'>
                 <td>
-                    <input style="hide:true;" type="checkbox" ng-model="Check.check" ng-true-value="'Completed'" ng-false-value="" class="ng-dirty ng-touched ng-empty ng-invalid ng-invalid-parse">
+                    <input style="hide:true;" type="checkbox" ng-model="selectCheck.check" ng-true-value="'Completed'" ng-false-value="'Incomplete'" class="ng-dirty ng-touched ng-empty ng-invalid ng-invalid-parse">
                 </td>
                 <td>{{ contact.todo}}</td>
-                <td>{{ Check.check}}</td>
+                <td>{{ selectCheck.check}}</td>
             </tr>
           </tbody>
         </table>

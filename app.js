@@ -1,5 +1,5 @@
-angular.module ('ContactApp',[])
-.service('contactService' , function(){
+angular.module ('TodoApp',[])
+.service('Service' , function(){
   var self = this
 
   self.contacts = []
@@ -14,25 +14,26 @@ angular.module ('ContactApp',[])
 
 })
 
-
-.controller('ListContactController',function($scope, contactService) {
-  $scope.contacts = contactService.list()
+.controller('Checkbox', function ($scope) {
+    $scope.selectCheck = {
+      check: 'Incomplete'
+    }
 })
-.controller('AddContactController',function($scope,contactService){
+.controller('ListToDos',function($scope, Service) {
+  $scope.contacts = Service.list()
+})
+.controller('AddToDos',function($scope,Service){
   $scope.save = function() {
     var contact = {
       todo: $scope.todo,
-      nickname: $scope.nickname,
       check: ''
     }
-    contactService.add(contact)
+    Service.add(contact)
     resetForm();
   }
 
   function resetForm() {
     $scope.todo = ''
-    $scope.nickname = ''
-    $scope.phone = ''
   }
 });
 
