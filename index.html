@@ -30,14 +30,10 @@
             <tbody>
               <tr ng-repeat = 'contact in contacts'>
                 <td>
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox" id="blankCheckbox" value="option1" >
-                      </label>
-                    </div>
+                    <input style="hide:true;" type="checkbox" ng-model="Check.check" ng-true-value="'Completed'" ng-false-value="" class="ng-dirty ng-touched ng-empty ng-invalid ng-invalid-parse">
                 </td>
                 <td>{{ contact.todo}}</td>
-                <td>{{ contact.phone}}</td>
+                <td>{{ Check.check}}</td>
             </tr>
           </tbody>
         </table>
