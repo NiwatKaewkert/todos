@@ -16,7 +16,7 @@ angular.module ('TodoApp',[])
 .controller('Checkbox', function ($scope) {
     todo: $scope.todo
     $scope.selectCheck = {
-      check: 'Incomplete'
+      check: 'Active'
     }
 })
 
@@ -25,11 +25,11 @@ angular.module ('TodoApp',[])
 })
 
 .controller('AddToDos',function($scope,Service){
-  $scope.save = function() 
+  $scope.save = function()
   {
-      if ($scope.todo != '') 
+      if ($scope.todo != '')
       {
-        var contact = 
+        var contact =
         {
           todo: $scope.todo,
           check: ''
@@ -47,4 +47,3 @@ angular.module ('TodoApp',[])
     $scope.todo = ''
   }
 });
-

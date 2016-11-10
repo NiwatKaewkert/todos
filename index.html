@@ -11,7 +11,7 @@
       <div ng-controller="AddToDos">
         <form class="form-inline">
           <div class="form-group">
-            <input type="text" id="todo" class="form-control" name="todo" ng-model = "todo" placeholder="What needs to be done?" > 
+            <input type="text" id="todo" class="form-control" name="todo" ng-model = "todo" placeholder="What needs to be done?" >
           </div>
           <input type="submit" class="btn btn-info" ng-click = "save()"  value="Add" >
         </form>
@@ -30,8 +30,8 @@
             </thead>
             <tbody class="table table-hover">
               <tr ng-repeat = 'contact in contacts' ng-controller = 'Checkbox'>
-                <td > 
-                    <input style="hide:true;" type="checkbox" ng-model="selectCheck.check" ng-true-value="'Completed'" ng-false-value="'Incomplete'" class="ng-dirty ng-touched ng-empty ng-invalid ng-invalid-parse">
+                <td >
+                    <input style="hide:true;" type="checkbox" ng-model="selectCheck.check" ng-true-value="'Completed'" ng-false-value="'Active'" class="ng-dirty ng-touched ng-empty ng-invalid ng-invalid-parse">
                 </td>
                 <td>{{ contact.todo}}</td>
                 <td>{{ selectCheck.check}}</td>
@@ -41,7 +41,7 @@
         </div>
       </div>
       <button type="button" class="btn btn-danger btn-xs" onclick="window.location.href=window.location.href" >Clear All</button>
-      
+
     </div>
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
