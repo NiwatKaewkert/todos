@@ -27,9 +27,8 @@ angular.module ('TodoApp',[])
 .controller('AddToDos',function($scope,Service){
   $scope.save = function()
   {
-      if($scope.todo[0] == '')
-        resetForm()
-      else if ($scope.todo != '')
+    $scope.todoText = '';
+      if($scope.todo != '')
       {
         var contact =
         {
@@ -37,6 +36,9 @@ angular.module ('TodoApp',[])
           check: ''
         }
         Service.add(contact)
+      }
+      else {
+        resetForm()
       }
 
     resetForm()
