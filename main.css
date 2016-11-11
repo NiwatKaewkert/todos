@@ -1,0 +1,48 @@
+.tc{
+	text-align: center;
+	color: #ffffff;
+}
+.text-left{
+	text-align: left;
+}
+.Hover:hover {
+    background-color: blue;
+}
+.background{
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+.table{
+	border-spacing: 0;
+}
+
+.margin-left{
+	margin-left: 15px;
+	color: #ffffff;
+}
+.border-head{
+	border-bottom: 1px solid gray;
+}
+.border-bottom{
+	border-bottom: 5px solid #ffffff;
+}
+.bw{
+	border-bottom: 1px solid #ffffff;
+}
+.dropdown{
+	position: relative;
+	display: inline-block;
+}
+.dropdown-content{
+	display: none;
+	position: absolute;
+	background-color: #000000;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px reba(0,0,0,0.2);
+	padding: 12px 16px;
+	z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}

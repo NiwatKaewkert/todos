@@ -7,6 +7,8 @@
   </head>
 
   <body>
+
+    <center>  <img src = "Todoslogo.jpg">
     <div class="container">
       <div ng-controller="AddToDos">
         <form class="form-inline">
@@ -26,6 +28,7 @@
                 <th>Check</th>
                 <th>List</th>
                 <th>Status</th>
+                <th></th>
               </tr>
             </thead>
             <tbody class="table table-hover">
@@ -35,14 +38,19 @@
                 </td>
                 <td>{{ contact.todo}}</td>
                 <td>{{ selectCheck.check}}</td>
+                <td><button class="destroy" ng-click="removeTodo(todo)"></button></td>
             </tr>
           </tbody>
         </table>
         </div>
       </div>
-      <button type="button" class="btn btn-danger btn-xs" onclick="window.location.href=window.location.href" >Clear All</button>
+      <button type="button" class="btn btn-primary btn-xs" onclick="window.location.href=window.location.href" >All</button>
+      <button type="button" class="btn btn-danger btn-xs" onclick="window.location.href=window.location.href" >Active</button>
+      <button type="button" class="btn btn-warning btn-xs" onclick="window.location.href=window.location.href" >Completed</button>
+      <button type="button" class="btn btn-xs" onclick="window.location.href=window.location.href" >Clear All</button>
 
     </div>
+    </center>
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
