@@ -28,7 +28,7 @@ angular.module ('TodoApp',[])
   $scope.save = function()
   {
     $scope.todoText = '';
-      if($scope.todo != '')
+      if($scope.todo != '' && $scope.todo != null)
       {
         var contact =
         {
