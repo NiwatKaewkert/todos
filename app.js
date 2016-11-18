@@ -2,7 +2,10 @@ angular.module ('TodoApp',[])
 .service('Service' , function(){
   var self = this
 
-  self.contacts = []
+  self.contacts = [
+    {title: 'test1', done: true},
+    {title: 'test2', done: false}
+  ]
 
   self.list = function(){
     return self.contacts
@@ -13,38 +16,36 @@ angular.module ('TodoApp',[])
   }
 })
 
-.controller('Checkbox', function ($scope) {
-    todo: $scope.todo
-    $scope.selectCheck = {
-      check: 'Active'
-    }
-})
-
 .controller('ListToDos',function($scope, Service) {
   $scope.contacts = Service.list()
+})
+
+.controller('Checkbox', function ($scope,Service) {
+  $scope.check = function(condition) {
+      if(condition.done == true)
+        condition.done = false;
+      else
+        condition.done = true
+     }
 })
 
 .controller('AddToDos',function($scope,Service){
   $scope.save = function()
   {
-    $scope.todoText = '';
-      if($scope.todo != '' && $scope.todo != null)
+      if($scope.title != '' && $scope.title != null)
       {
         var contact =
         {
-          todo: $scope.todo,
-          check: ''
+          title: $scope.title,
+          done: false
         }
+
         Service.add(contact)
       }
-      else {
-        resetForm()
-      }
-
     resetForm()
   }
 
   function resetForm() {
-    $scope.todo = ''
+    $scope.title = ''
   }
 });
